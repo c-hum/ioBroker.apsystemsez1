@@ -291,7 +291,7 @@ if (objdata.data.e1 !== undefined && objdata.data.e2 !== undefined) {
     const value1 = objdata.data.e1;
     const value2 = objdata.data.e2;
 
-    if (value1 === 0 && value2 === 0) {
+    if (value1 < 0.01 && value2 < 0.01) {
         // Schedule the state update at midnight if values are 0
         setTimeout(() => {
             adapter.setState('EZ1-M.Leistung.ertrag_channel1_heute', value1, true);
