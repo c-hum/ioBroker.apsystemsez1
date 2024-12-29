@@ -316,22 +316,9 @@ if (objdata.data.e1 !== undefined && objdata.data.e2 !== undefined) {
                     }
                 }
             } catch (error) {
-                if (this.config.Warnungen) {
-                    // Check if Leistung.channel1_channel2_momentan exists and is greater than 1
-                    if (typeof this.getState === 'function') {
-                        this.getState('Leistung.channel1_channel2_momentan', (err, state) => {
-                            if (!err && state && state.val > 1) {
-                                this.log.warn("Keine Daten erhalten, bitte IP oder Verbindung prüfen.");
-                            } else {
-                                this.log.debug("Keine Daten erhalten, aber Leistung ist kleiner oder gleich 1.");
-                            }
-                        });
-                    } else {
-                        // Fallback if getState is not available
-                        this.log.debug("Keine Daten erhalten, getState Funktion nicht verfügbar.");
-                    }
+                if (adapter.config.Warnungen) {
+                    adapter.log.warn("Keine Daten erhalten, bitte IP oder Verbindung prüfen.");
                 }
-            }
                 // Clear the existing interval to reset it
                 clearInterval(myInterval);
                 if (adapter.config.DoppelInterval) {
