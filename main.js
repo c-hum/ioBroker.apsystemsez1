@@ -317,7 +317,7 @@ if (objdata.data.e1 !== undefined && objdata.data.e2 !== undefined) {
                 }
             } catch (error) {
                 if (adapter.config.Warnungen) {
-                    adapter.log.warn("Keine Daten erhalten, bitte IP oder Verbindung prüfen.");
+                    adapter.log.debug("Keine Daten erhalten, bitte IP oder Verbindung prüfen.");
                 }
                 // Clear the existing interval to reset it
                 clearInterval(myInterval);
