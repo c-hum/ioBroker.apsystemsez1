@@ -374,7 +374,7 @@ if (objdata.data.e1 !== undefined && objdata.data.e2 !== undefined) {
                 }
             } catch (error) {
                 if (adapter.config.Warnungen) {
-                    adapter.log.warn("Keine Devicedaten, bitte IP oder Verbindung prüfen.");
+                    adapter.log.debug("Keine Devicedaten, bitte IP oder Verbindung prüfen.");
                 }
             }
         });
